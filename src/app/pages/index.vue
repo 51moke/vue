@@ -1,16 +1,15 @@
 <template>
   <div class="index">
-    <h1>{{ msg }}</h1>
+    <demo/>
   </div>
 </template>
 
 <script>
+import Demo from '@modules/Demo'
 export default {
   name: 'Index',
-  data () {
-    return {
-      msg: 'hi vue'
-    }
+  components: {
+    Demo
   }
 }
 </script>
