@@ -1,6 +1,7 @@
 <template>
   <div>
-    <ul>
+    <div v-if="loading">loading...</div>
+    <ul v-if="!loading">
       <li
         v-for="item in itemList"
         :key="item.id"
@@ -14,6 +15,19 @@
 
 <script>
 export default {
+  data () {
+    return {loading: true}
+  },
+  mounted () {
+    this.$store.dispatch('demo/getList')
+      .then(res => {
+        // console.log('接口完成', res)
+        this.loading = false
+      })
+      .catch(err => {
+        console.log('接口异常', err)
+      })
+  },
   computed: {
     itemList () {
       return this.$store.state.demo.itemList
