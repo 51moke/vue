@@ -42,7 +42,7 @@ module.exports = {
       '@modules': resolve('src/app/modules'),
       '@router': resolve('src/app/router'),
       '@pages': resolve('src/app/pages'),
-      '@ui': resolve('src/ui'),
+      '@ui': resolve('src/app/ui'),
     }
   },
   module: {
