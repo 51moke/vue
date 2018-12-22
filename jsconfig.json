@@ -7,7 +7,7 @@
       "@stores/*":["./src/stores/*"],
       "@components/*": ["./src/app/components/*"],
       "@modules/*": ["./src/app/modules/*"],
-      "@router/*": ["./src/app/router/*"],
+      //"@router/*": ["./src/app/router/*"],
       "@pages/*": ["./src/app/pages/*"],
       "@ui/*": ["./src/app/ui/*"],
       "@/*":["./src/*"]
