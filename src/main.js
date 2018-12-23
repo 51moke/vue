@@ -46,6 +46,7 @@ demo.install = function (Vue, options) {
 Vue.use(demo)
 */
 
+// 启动程序
 export let start = (router) => {
 /* eslint-disable no-new */
   new Vue({

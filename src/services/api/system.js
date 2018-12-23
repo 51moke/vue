@@ -10,28 +10,21 @@ export default class routes {
       payload: [
         {
           path: '/',
-          name: 'Index',
-          title: '主页',
           component: '@app/index',
-          children: []
+          children: [],
+          meta: { title: 'guide' }
         },
         {
-          path: '/new',
-          name: 'News',
-          title: '新闻',
+          path: '/news/ftt',
           component: '@app/news',
           children: [
             {
-              path: '/cn',
-              name: 'Cn',
-              title: '国内新闻',
+              path: 'cn',
               component: '@app/news/cn',
               children: []
             },
             {
-              path: '/en',
-              name: 'En',
-              title: '国际新闻',
+              path: 'en',
               component: '@app/news/en',
               children: []
             }
