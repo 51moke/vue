@@ -46,6 +46,11 @@ export let start = data => {
   console.log('路由数据', data)
   let routes = routerBuild(data)
   console.log('解析路由结果', routes)
+  routes.push({
+    path: '*',
+    name: p404.name,
+    component: p404.component
+  })
   return new Router({
     routes
   })

@@ -15,7 +15,7 @@ export default class routes {
           meta: { title: 'guide' }
         },
         {
-          path: '/news/ftt',
+          path: '/news',
           component: '@app/news',
           children: [
             {
