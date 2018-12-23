@@ -3,7 +3,10 @@
 import store from './stores'
 import Vue from 'vue'
 import App from '@/app'
+import './services/mock'
+if (process.env.NODE_ENV === 'development') {
 
+}
 Vue.config.productionTip = false
 
 /*

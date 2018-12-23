@@ -1,6 +1,6 @@
 <template>
   <div v-if="item">
-
+    <img :src="item.thumb"/>
     <!-- <h3 v-my-directive="item">当前选择</h3> -->
     <h1>姓名：{{ item.name }}</h1>
     <h1>年龄：{{ item.age }}</h1>
