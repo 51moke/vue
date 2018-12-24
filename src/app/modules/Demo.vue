@@ -1,6 +1,7 @@
 <template>
   <div>
     <h3>{{title}}</h3>
+    <el-button type="primary">测试ele</el-button>
     <div class="demo-box">
       <div class="demo-list">
         <DemoList />
@@ -29,7 +30,8 @@ export default {
   }
 }
 </script>
-<style scoped>
+<style lang="scss">
+@import "@/styles/var.scss";
 .demo-box {
   width: 600px;
   overflow: hidden;
@@ -41,5 +43,12 @@ export default {
   width: 300px;
   float: left;
 }
-
+.demo-box{
+  div{
+    color: $red;
+    &:active{
+      color: $yellow
+    }
+  }
+}
 </style>
