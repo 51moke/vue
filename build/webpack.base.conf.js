@@ -43,6 +43,7 @@ module.exports = {
       //'@router': resolve('src/app/router'),
       '@pages': resolve('src/app/pages'),
       '@ui': resolve('src/app/ui'),
+      '@layout': resolve('src/app/layout'),
     }
   },
   module: {

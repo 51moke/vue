@@ -10,7 +10,8 @@
       //"@router/*": ["./src/app/router/*"],
       "@pages/*": ["./src/app/pages/*"],
       "@ui/*": ["./src/app/ui/*"],
-      "@/*":["./src/*"]
+      "@/*":["./src/*"],
+      "@layout/*":["./src/app/layout/*"]
     }
   }
 }

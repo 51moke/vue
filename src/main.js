@@ -3,7 +3,7 @@
 import store from './stores'
 import Vue from 'vue'
 import App from '@/app'
-import './services/mock'
+
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 Vue.use(ElementUI, { size: 'medium', zIndex: 3000 })

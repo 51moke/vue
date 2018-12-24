@@ -1,5 +1,5 @@
 import { Register } from 'apibus'
-// import axios from 'axios'
+import axios from 'axios'
 
 @Register('system')
 export default class routes {
@@ -32,6 +32,13 @@ export default class routes {
         }
       ]
     }
+  }
+
+  getLayout () {
+    return axios.post('/getlayout')
+      .then(res => {
+        return res.data
+      })
   }
 }
 
