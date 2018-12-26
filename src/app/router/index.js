@@ -21,6 +21,10 @@ let routerFiles = {
   '@app/news/en': {
     name: 'En',
     component: () => import('@pages/news/en')
+  },
+  '@app/login': {
+    name: 'Login',
+    component: () => import('@pages/login')
   }
 }
 

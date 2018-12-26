@@ -1,25 +1,37 @@
 <template>
   <main-layout>
-    <template slot="demo1">
-      <demo />
+    <template slot="header">
+      <Header />
     </template>
-    <template slot="demo2">
-      <demo />
+    <template slot="aside">
+      <Aside />
     </template>
-
+    <template slot="main">
+      <Table />
+    </template>
+    <template slot="footer">
+      <Footer/>
+    </template>
   </main-layout>
 </template>
 
 <script>
-import Demo from '@modules/Demo'
+
 import main from '@layout/main'
+import Aside from '@modules/main/Aside'
+import Header from '@modules/main/Header'
+import Footer from '@modules/main/Footer'
+import Table from '@modules/Table/table'
 const mainLayout = main()
 
 export default {
   name: 'Index',
   components: {
-    Demo,
-    mainLayout
+    mainLayout,
+    Aside,
+    Header,
+    Footer,
+    Table
   }
 }
 </script>
