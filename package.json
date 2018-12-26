@@ -14,7 +14,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "apibus": "^1.0.7",
+    "apibus": "^1.0.8",
     "axios": "^0.18.0",
     "hook-promise": "^1.0.0",
     "log4web": "^1.0.0",
