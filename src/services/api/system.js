@@ -29,6 +29,12 @@ export default class routes {
               children: []
             }
           ]
+        },
+        {
+          path: '/login',
+          component: '@app/login',
+          children: [],
+          meta: { title: 'login' }
         }
       ]
     }
