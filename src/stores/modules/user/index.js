@@ -24,9 +24,9 @@ export const mutations = {
 
 export const actions = {
   getList (context, params) {
-    console.log('&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&')
+    // console.log('&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&')
     return api.tableData.getList(params).then(res => {
-      console.log(params, 'params')
+      // console.log(params, 'params')
       context.commit('getList', res.payload)
     })
   }

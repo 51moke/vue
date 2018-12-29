@@ -12,7 +12,7 @@ export default {
   // template: `<div>标题：{{ item&&item.title }}</div>`,
   computed: {
     item () {
-      console.log('数据更新了')
+      // console.log('数据更新了')
       // this.$myMethod('************((((((((((((((((')
       return this.$store.state.demo.item
     }

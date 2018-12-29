@@ -7,7 +7,7 @@ const Random = Mock.Random
 
 Mock.mock('/table', 'post', ({body}) => {
   let data = JSON.parse(body)
-  console.log(data, 'mock！！！！！！！！！！！！！！！！！！！1')
+  // console.log(data, 'mock！！！！！！！！！！！！！！！！！！！1')
   let total = 96
   let currentPage = data.page
   let pageSize = data.pageSize
@@ -16,7 +16,7 @@ Mock.mock('/table', 'post', ({body}) => {
 
   let number = pageSize
   if (currentPage === totalPage) {
-    console.log('aaa', total, pageSize, total % pageSize)
+    // console.log('aaa', total, pageSize, total % pageSize)
     number = (total % pageSize) || number
   }
 
