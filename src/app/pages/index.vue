@@ -9,11 +9,13 @@
     <template slot="main">
       <div class="main-con">
         <el-breadcrumb separator-class="el-icon-arrow-right">
-          <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+          <el-breadcrumb-item :to="{ path: '/' }">用户工作台</el-breadcrumb-item>
           <el-breadcrumb-item>活动管理</el-breadcrumb-item>
           <el-breadcrumb-item>活动列表</el-breadcrumb-item>
           <el-breadcrumb-item>活动详情</el-breadcrumb-item>
         </el-breadcrumb>
+        <EditableTabs/>
+
         <router-view/>
       </div>
 
@@ -31,7 +33,7 @@ import Aside from '@components/menu'
 import Header from '@components/header'
 import Footer from '@components/footer'
 import Table from '@modules/Table/table'
-import demo from '@modules/demo'
+import EditableTabs from '@components/editableTabs'
 const mainLayout = main()
 
 export default {
@@ -42,7 +44,28 @@ export default {
     Header,
     Footer,
     Table,
-    demo
+    EditableTabs
+
+  },
+  data () {
+    return {
+
+    }
+  },
+  mounted () {
+    // this.$store.dispatch('system/getList')
+  },
+  methods: {
+
+  },
+  computed: {
+    isCollapse () {
+      return this.$store.state.layout.isCollapse
+    }
+    /* navList () {
+      console.log(JSON.parse(JSON.stringify(this.$store.state.system.routerList)), '////////////')
+      return (this.$store.state.system.routerList[0] && this.$store.state.system.routerList[0].children) || []
+    } */
   }
 }
 </script>
@@ -80,5 +103,8 @@ li.el-menu-item:hover i,
 .el-submenu .el-menu-item:hover {
   color: #409eff !important;
   border-left: 2px solid #3b4453 !important;
+}
+.fa{
+  margin-right: 10px;
 }
 </style>

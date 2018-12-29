@@ -107,7 +107,7 @@ export default class routes {
               path: '/dashBoard',
               component: '@ui/dashBoard',
               children: [],
-              meta: { title: '用户工作台', icon: 'fa-home' }
+              meta: { title: '用户工作台', icon: 'fa-desktop' }
             },
             {
               path: '/systemMgt',
