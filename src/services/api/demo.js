@@ -6,7 +6,7 @@ export default class demo {
   getList () {
     return axios.post('/demo')
       .then(res => {
-        console.log('mock数据', res.data)
+        // console.log('mock数据', res.data)
         return res.data
       })
     // let data = {

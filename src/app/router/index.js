@@ -14,10 +14,10 @@ let routerFiles = {
     name: 'News',
     component: () => import('@pages/news')
   },
-  '@app/news/cn': {
-    name: 'Cn',
+  /*  '@app/news/cn': {
+    name: 'newcn',
     component: () => import('@pages/news/cn')
-  },
+  }, */
   '@app/news/en': {
     name: 'En',
     component: () => import('@pages/news/en')
@@ -25,12 +25,34 @@ let routerFiles = {
   '@app/login': {
     name: 'Login',
     component: () => import('@pages/login')
+  },
+  '@ui/dashBoard': {
+    name: 'dashBoard',
+    component: () => import('@ui/dashBoard')
+  },
+
+  '@page/systemDemo': {
+    name: 'systemDemo',
+    component: () => import('@pages/systemDemo')
+  },
+  '@page/systemDemo/table': {
+    name: 'table',
+    component: () => import('@pages/systemDemo/table')
+  },
+  '@page/systemMgt': {
+    name: 'systemMgt',
+    component: () => import('@pages/systemMgt')
+  },
+  '@page/systemMgt/mainMenu': {
+    name: 'mainMenu',
+    component: () => import('@pages/systemMgt/mainMenu')
   }
+
 }
 
 // 404页面配置
-let p404 = {name: 'P404', component: () => import('@pages/p404')}
-
+let p404 = {component: () => import('@pages/p404')}
+// let login = {path: '/login', name: 'login', component: () => import('@pages/login')}
 // 路由拼接
 let routerBuild = data => {
   return data.map(o => {

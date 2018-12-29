@@ -1,13 +1,5 @@
 <template>
   <div class="default">
-    <!-- <div>
-      <h1>左边</h1>
-      <slot name="demo1"></slot>
-    </div>
-    <div>
-      <h1>右边</h1>
-      <slot name="demo2"></slot>
-    </div> -->
     <el-container>
       <el-header>
         <slot name="header"></slot>

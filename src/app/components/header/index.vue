@@ -5,17 +5,22 @@
       <div class="icon" @click="toggleMenu"><img v-show="isCollapse" src="./icon/show.png" /><img v-show="!isCollapse" src="./icon/hide.png" /></div>
     </div>
     <div class="header-con">
-      <div class="txt">您好，admin 欢迎您！</div>
-      <div class="photo">
-        <el-dropdown>
-          <el-button type="primary"> </el-button>
-          <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item>个人中心</el-dropdown-item>
-            <el-dropdown-item>修改密码</el-dropdown-item>
-            <el-dropdown-item>注销登陆</el-dropdown-item>
-          </el-dropdown-menu>
-        </el-dropdown>
+      <div class="topBox">
+        <div class="txt">您好，admin 欢迎您！</div>
+        <div class="photo">
+          <el-dropdown>
+            <el-button type="primary"> </el-button>
+            <el-dropdown-menu slot="dropdown">
+              <el-dropdown-item>个人中心</el-dropdown-item>
+              <el-dropdown-item>修改密码</el-dropdown-item>
+              <el-dropdown-item>注销登陆</el-dropdown-item>
+            </el-dropdown-menu>
+          </el-dropdown>
+        </div>
       </div>
+      <!-- <div class="tabBox">
+        <editableTabs/>
+      </div> -->
 
     </div>
 
@@ -23,8 +28,11 @@
 </template>
 
 <script>
+import editableTabs from '@components/editableTabs'
 export default {
-
+  components: {
+    editableTabs
+  },
   methods: {
     toggleMenu () {
       // this.isShow = !this.isShow
@@ -42,6 +50,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+@import '@styles/index.scss';
 .header {
   height: inherit;
   line-height: 100%;
@@ -81,21 +90,29 @@ export default {
 
   .header-con {
     flex: 1;
-    justify-content: flex-end;
-    color: #fff;
-    font-size: 12px;
-    line-height: 100%;
-    display: flex;
+    /* justify-content: flex-end; */
+
+    /* display: flex; */
+    display: block;
     & > div {
     }
-    .photo {
-      width: 48px;
-      height: 48px;
-      background: white;
-      border-radius: 50%;
-      float: right;
-      margin-right: 20px;
-      margin-left: 10px;
+    .topBox {
+      justify-content: flex-end;
+      display: flex;
+      color: #fff;
+    font-size: 12px;
+    line-height: 100%;
+    height: inherit;
+    align-items: center;
+      .photo {
+        width: 48px;
+        height: 48px;
+        background: white;
+        border-radius: 50%;
+        float: right;
+        margin-right: 20px;
+        margin-left: 10px;
+      }
     }
   }
   .el-button--primary {

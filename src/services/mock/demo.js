@@ -35,7 +35,7 @@ let data = Mock.mock({
   code: 0
 })
 
-console.log('DDDDD', data)
+console.log('demo-data', data)
 // Mock.mock('/demo', 'post', () => data)
 
 var template = {
