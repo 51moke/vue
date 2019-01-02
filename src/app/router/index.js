@@ -23,7 +23,8 @@ let routerFiles = {
     component: () => import('@pages/news/en')
   },
   '@app/login': {
-    name: 'Login',
+    name: 'login',
+    path: '/login',
     component: () => import('@pages/login')
   },
   '@ui/dashBoard': {

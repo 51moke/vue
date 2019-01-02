@@ -1,23 +1,29 @@
 import { Register } from 'apibus'
-import axios from 'axios'
+import http from '@http'
+import prefix from './proxy'
 // import layout from @app/page/index'
-@Register('system')
 
+/* export const routes = (obj) => http.get(`/${prefix}/getMenu`, {
+  params: obj
+}) */
+@Register('system')
 export default class routes {
   // 获取路由
   getRouters () {
-    let data = axios.get('v1/getMenu').then(res => {
-      res.data.payload = [{
+    return http.get(`${prefix}/getMenu`).then(res => {
+      res.payload = [{
         path: '/',
         component: '@app/index',
-        redirect: 'one',
+        redirect: 'dashboard',
         meta: { title: '导航' },
-        children: [...res.data.payload]
-      }]
-      console.log(res.data, 'bbbbbbb')
-      return res.data
+        children: [...res.payload]
+
+      }
+      ]
+      console.log(res, 'bbbbbbb')
+      return res
     })
-    console.log(data)
+
     /* {
       code: 0,
       payload: [
@@ -95,7 +101,7 @@ export default class routes {
       ]
     } */
 
-    return {
+    /* return {
       code: 0,
       payload: [
         {
@@ -134,24 +140,21 @@ export default class routes {
                   component: '@page/systemDemo/table',
 
                   meta: { title: '表格示例' },
-                  children: []
+                  children: [
+                  ]
                 }
               ]
 
-            }
-            /* {
-              path: '',
-              component: '',
+            },
+            {
+              path: '/systemDemo2',
+              component: '@page/systemDemo2',
+              meta: { title: '系统示例2', icon: 'fa-th-large' },
               children: [
                 {
-                  path: '',
-                  component: '',
-                  children: [],
-                  meta: { title: '二级页面' }
-                },
-                {
-                  path: '/a2/b2',
-                  component: '@app/news/cn',
+                  path: '/systemDemo/table2',
+                  component: '@page/systemDemo/table2',
+                  meta: { title: '表格示例2' },
                   children: [
                     {
                       path: '/a2/b2/c1',
@@ -159,24 +162,49 @@ export default class routes {
                       children: [],
                       meta: { title: '三级页面' }
                     }
-                  ],
-                  meta: { title: '二级目录' }
+                  ]
+                },
+                {
+                  path: '/systemDemo/table21',
+                  component: '@page/systemDemo/table21',
+                  meta: { title: '表格示例21' },
+                  children: [
+                    {
+                      path: '/a2/b2/c11',
+                      component: '@app/news/cn2',
+                      children: [],
+                      meta: { title: '三级页面' }
+                    }
+                  ]
+                },
+                {
+                  path: '/systemDemo/table3',
+                  component: '@page/systemDemo/table3',
+                  meta: { title: '表格示例3' },
+                  children: [
+                    {
+                      path: '/a2/b2/c13',
+                      component: '@app/news/cn3',
+                      children: [],
+                      meta: { title: '三级页面' }
+                    }
+                  ]
                 }
-              ],
-              meta: { title: '一级' }
-            } */
+              ]
 
+            }
           ],
           meta: { title: '导航' }
         }
       ]
-    }
+    } */
   }
 
   getLayout () {
-    return axios.post('/getlayout')
+    return http.post('/getlayout')
       .then(res => {
-        return res.data
+        console.log(res)
+        return res
       })
   }
 }

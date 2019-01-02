@@ -4,7 +4,8 @@ export const namespaced = true
 
 export const state = {
 
-  routerList: []
+  routerList: [],
+  Breadcrumb: null
 
 }
 
@@ -16,6 +17,9 @@ export const mutations = {
   getRouter (state, data) {
     // console.log('更新数据', data)
     state.routerList = data
+  },
+  getBreadcrumb (state, data) {
+    state.Breadcrumb = data
   }
 }
 
@@ -27,6 +31,10 @@ export const actions = {
         context.commit('getRouter', res.payload)
         return res.payload
       })
+  },
+  getBreadcrumb (context, data) {
+    context.commit('getBreadcrumb', data)
+    console.log(data, 'data')
   }
 
 }

@@ -5,6 +5,9 @@
       <div class="icon" @click="toggleMenu"><img v-show="isCollapse" src="./icon/show.png" /><img v-show="!isCollapse" src="./icon/hide.png" /></div>
     </div>
     <div class="header-con">
+      <div class="fix-Breadcrumb">
+        <!-- <Breadcrumb/> -->
+      </div>
       <div class="topBox">
         <div class="txt">您好，admin 欢迎您！</div>
         <div class="photo">
@@ -29,28 +32,25 @@
 
 <script>
 import editableTabs from '@components/editableTabs'
+import Breadcrumb from '@components/breadcrumb'
 export default {
   components: {
-    editableTabs
+    editableTabs, Breadcrumb
   },
   methods: {
     toggleMenu () {
-      // this.isShow = !this.isShow
-      // this.isCollapse = this.isShow
       this.$store.dispatch('layout/changeIsCollapse')
     }
   },
   computed: {
     isCollapse () {
-      console.log('数据更新了')
-      // this.$myMethod('************((((((((((((((((')
       return this.$store.state.layout.isCollapse
     }
   }
 }
 </script>
 <style lang="scss" scoped>
-@import '@styles/index.scss';
+@import "@styles/index.scss";
 .header {
   height: inherit;
   line-height: 100%;
@@ -70,7 +70,6 @@ export default {
     justify-content: center;
     align-items: center;
     .logo {
-      /* margin-right: 10px; */
       flex: 3;
       justify-content: center;
       align-items: center;
@@ -89,10 +88,8 @@ export default {
   }
 
   .header-con {
+    position: relative;
     flex: 1;
-    /* justify-content: flex-end; */
-
-    /* display: flex; */
     display: block;
     & > div {
     }
@@ -100,10 +97,10 @@ export default {
       justify-content: flex-end;
       display: flex;
       color: #fff;
-    font-size: 12px;
-    line-height: 100%;
-    height: inherit;
-    align-items: center;
+      font-size: 12px;
+      line-height: 100%;
+      height: inherit;
+      align-items: center;
       .photo {
         width: 48px;
         height: 48px;
@@ -121,5 +118,16 @@ export default {
     background: none;
     border-radius: 50%;
   }
+}
+</style>
+<style lang="scss">
+//面包屑
+.fix-Breadcrumb {
+  position: absolute;
+  height:inherit;
+  left: 0;
+  top: 0;
+  padding-left:10px;
+
 }
 </style>
