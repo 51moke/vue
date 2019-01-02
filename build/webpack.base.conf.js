@@ -44,7 +44,8 @@ module.exports = {
       '@pages': resolve('src/app/pages'),
       '@ui': resolve('src/app/ui'),
       '@layout': resolve('src/app/layout'),
-      '@styles': resolve('src/styles')
+      '@styles': resolve('src/styles'),
+      '@http': resolve('./src/services/net/http'),
     }
   },
   module: {
