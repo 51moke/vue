@@ -21,11 +21,9 @@
 <script>
 
 import main from '@ui/layout/index.js'
-import Aside from '@components/menu'
-import Header from '@components/header'
-import Footer from '@components/footer'
-import Table from '@modules/Table/table'
-import EditableTabs from '@components/editableTabs'
+import Aside from '@modules/menu'
+import Header from '@modules/header'
+import Footer from '@modules/footer'
 
 const mainLayout = main()
 
@@ -35,26 +33,7 @@ export default {
     mainLayout,
     Aside,
     Header,
-    Footer,
-    Table,
-    EditableTabs
-
-  },
-  data () {
-    return {
-
-    }
-  },
-  mounted () {
-
-  },
-  methods: {
-
-  },
-  computed: {
-    isCollapse () {
-      return this.$store.state.layout.isCollapse
-    }
+    Footer
   }
 }
 </script>
