@@ -24,7 +24,6 @@ let routerFiles = {
   },
   '@app/login': {
     name: 'login',
-    path: '/login',
     component: () => import('@pages/login')
   },
   '@ui/dashBoard': {
