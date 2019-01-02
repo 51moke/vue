@@ -15,10 +15,17 @@ export default class routes {
         path: '/',
         component: '@app/index',
         redirect: 'dashboard',
-        meta: { title: '导航' },
+        meta: { title: '首页' },
         children: [...res.payload]
 
+      },
+      {
+        path: '/login',
+        component: '@app/login',
+        children: []
+
       }
+
       ]
       console.log(res, 'bbbbbbb')
       return res
