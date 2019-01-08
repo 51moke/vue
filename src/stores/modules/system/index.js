@@ -7,14 +7,38 @@ export const state = {
   routerList: [],
   Breadcrumb: null,
   allMune: [],
-  num: []
+  num: [],
+  FormData: {
+    sortNum: '',
+    name: '',
+    URL: '',
+
+    radioInfo: {
+      status: 1,
+      labels: ['锁定', '正常', '停用']
+    },
+    icon: '',
+    desc: '',
+    regInfo: {
+      name: 'admin',
+      org: '',
+      date: ''
+    },
+    updateInfo: {
+      name: '',
+      org: '',
+      date: ''
+    }
+
+  }
 }
 export const getters = {
   allMune: state => state.allMune,
   /* num (state) {
     return state.num
   } */
-  num: state => state.num
+  num: state => state.num,
+  FormData: state => state.FormData
 }
 export const mutations = {
   getRouter (state, data) {
@@ -26,6 +50,11 @@ export const mutations = {
   },
   setAllMune (state, data) {
     state.allMune = data
+  },
+  getitemInfo (state, data) {
+    state.FormData.sortNum = data.id
+    state.FormData.name = data.label
+    console.log(data.label, 'data', state.FormData)
   }
 }
 

@@ -83,6 +83,7 @@ export default {
     // ...mapActions(['getAllMune'])
     getMuneInfo (mune) {
       this.test = mune
+      this.$store.commit('system/getitemInfo', mune)
     },
     check (val, arr) {
       console.log('>>>>>>>.arr', arr)
