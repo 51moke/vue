@@ -30,7 +30,30 @@ export const state = {
       date: ''
     }
 
-  }
+  },
+  fontIcon: [
+    {
+      title: '网页',
+      icons: ['address-book', 'address-book-o', 'address-card', 'address-card-o']
+    },
+    {
+      title: '网页2',
+      icons: ['address-book', 'address-book-o', 'address-card', 'address-card-o']
+    },
+    {
+      title: '网页3',
+      icons: ['address-book', 'address-book-o', 'address-card', 'address-card-o']
+    },
+    {
+      title: '网页4',
+      icons: ['address-book', 'address-book-o', 'address-card', 'address-card-o']
+    },
+    {
+      title: '网页5',
+      icons: ['address-book', 'address-book-o', 'address-card', 'address-card-o']
+    }
+
+  ]
 }
 export const getters = {
   allMune: state => state.allMune,
@@ -38,7 +61,8 @@ export const getters = {
     return state.num
   } */
   num: state => state.num,
-  FormData: state => state.FormData
+  FormData: state => state.FormData,
+  fontIcon: state => state.fontIcon
 }
 export const mutations = {
   getRouter (state, data) {
