@@ -16,14 +16,15 @@
   "dependencies": {
     "apibus": "^1.0.8",
     "axios": "^0.18.0",
+    "el-search-table-pagination": "^0.4.28",
+    "element-ui": "2.4.6",
     "hook-promise": "^1.0.0",
     "log4web": "^1.0.0",
+    "node-sass": "^4.7.2",
+    "sass-loader": "7.0.3",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
-    "vuex": "^3.0.1",
-    "element-ui": "2.4.6",
-    "node-sass": "^4.7.2",
-    "sass-loader": "7.0.3"
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

@@ -91,3 +91,29 @@ Mock.mock(`${prefix}/getMenu`, 'get', () => {
     ]
   }
 })
+Mock.mock(`${prefix}/getAllMenu`, 'get', () => {
+  return {
+    code: 0,
+    payload: [
+      {
+        id: 1,
+        label: 'mock测试',
+        children: [{
+          id: 4,
+          label: '主菜单管理'
+        }, {
+          id: 5,
+          label: '主菜单管理22'
+        }]
+      },
+      {
+        id: 2,
+        label: 'mock测试22',
+        children: [{
+          id: 4,
+          label: '主菜单管理'
+        }]
+      }
+    ]
+  }
+})

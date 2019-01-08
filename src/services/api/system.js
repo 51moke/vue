@@ -206,7 +206,19 @@ export default class routes {
       ]
     } */
   }
-
+  getAllMune () {
+    return http.get(`${prefix}/getAllMenu`).then(res => {
+      // res.payload = [{
+      //   path: '/',
+      //   component: '@app/index',
+      //   redirect: 'dashboard',
+      //   meta: { title: '导航' },
+      //   children: [...res.payload]
+      // }]
+      console.log(res, 'zhende')
+      return res
+    })
+  }
   getLayout () {
     return http.post('/getlayout')
       .then(res => {

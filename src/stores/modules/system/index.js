@@ -5,14 +5,17 @@ export const namespaced = true
 export const state = {
 
   routerList: [],
-  Breadcrumb: null
-
+  Breadcrumb: null,
+  allMune: [],
+  num: []
 }
-
 export const getters = {
-
+  allMune: state => state.allMune,
+  /* num (state) {
+    return state.num
+  } */
+  num: state => state.num
 }
-
 export const mutations = {
   getRouter (state, data) {
     // console.log('更新数据', data)
@@ -20,6 +23,9 @@ export const mutations = {
   },
   getBreadcrumb (state, data) {
     state.Breadcrumb = data
+  },
+  setAllMune (state, data) {
+    state.allMune = data
   }
 }
 
@@ -35,6 +41,20 @@ export const actions = {
   getBreadcrumb (context, data) {
     context.commit('getBreadcrumb', data)
     console.log(data, 'data')
+  },
+  getAllMune (context, data) {
+    return api.system.getAllMune()
+      .then(res => {
+        console.log('接口结果全部菜单', res)
+        context.commit('setAllMune', res.payload)
+        return res.payload
+      })
   }
 
 }
+// export default {
+//   state,
+//   getters,
+//   actions,
+//   mutations
+// }

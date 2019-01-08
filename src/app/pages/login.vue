@@ -13,12 +13,32 @@
       <!--<el-button @click.native.prevent="handleReset2">重置</el-button>-->
     </el-form-item>
     <div class="slideshow-image"></div>
+    <comEle v-on:a-bc="Alert333" :data="[{name:'系统'},{name:'drgrdr'}]"/>
   </el-form>
 
 </template>
 
 <script>
+
+var comEle = {
+  props: {
+    data: {
+      type: Array,
+      default: []
+    }
+  },
+  methods: {
+    Alert (mm) {
+      this.$emit('a-bc', mm)
+    }
+  },
+  template: '<div><h2 @click="Alert(1)">局部组件TEXT</h2><ul><li @click="Alert(i)" v-for="i in data" :key="i.id">{{i.name}}</li></ul></div>'
+}
+
 export default {
+  components: {
+    comEle
+  },
   data () {
     return {
       logining: false,
@@ -40,6 +60,9 @@ export default {
     }
   },
   methods: {
+    Alert333 (mm) {
+      alert(mm.name)
+    },
     handleReset2 () {
       this.$refs.ruleForm2.resetFields()
     },

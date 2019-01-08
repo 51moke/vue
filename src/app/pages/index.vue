@@ -47,7 +47,7 @@ export default {
   position: relative;
 }
 .el-main {
-  background: #f8f8f8 !important;
+  // background: #f8f8f8 !important;
   padding: 20px;
 }
 .el-tabs__new-tab {
