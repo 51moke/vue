@@ -28,6 +28,7 @@ export const actions = {
     return api.tableData.getList(params).then(res => {
       // console.log(params, 'params')
       context.commit('getList', res.payload)
+      return res
     })
   }
 }

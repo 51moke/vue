@@ -6,21 +6,21 @@ const Random = Mock.Random
 // })
 
 Mock.mock('/table', 'post', ({body}) => {
-  let data = JSON.parse(body)
-  // console.log(data, 'mock！！！！！！！！！！！！！！！！！！！1')
+  // let data = JSON.parse(body)
+  // // console.log(data, 'mock！！！！！！！！！！！！！！！！！！！1')
   let total = 96
-  let currentPage = data.page
-  let pageSize = data.pageSize
-  let totalPage = Math.ceil(total / pageSize)
+  let pageNum = 1
+  let pageSize = 10
+  // let totalPage = Math.ceil(total / pageSize)
   let itemList = []
 
-  let number = pageSize
-  if (currentPage === totalPage) {
-    // console.log('aaa', total, pageSize, total % pageSize)
-    number = (total % pageSize) || number
-  }
+  // let number = pageSize
+  // if (currentPage === totalPage) {
+  //   // console.log('aaa', total, pageSize, total % pageSize)
+  //   number = (total % pageSize) || number
+  // }
 
-  for (let i = 0; i < number; i++) {
+  for (let i = 0; i < 4; i++) {
     let tableData = {
       date: Random.date(),
       name: Random.cname(),
@@ -29,15 +29,15 @@ Mock.mock('/table', 'post', ({body}) => {
     }
     itemList.push(tableData)
   }
-
-  return {
+  let res = {
     code: 0,
     payload: {
       itemList,
-      totalPage, // 总页数
+      pageNum, // 总页数
       pageSize, // 每页显示的条数
-      currentPage, // 当前页
       total// 总条数
     }
   }
+  console.log('>>>>>>>>ceshi res', res)
+  return res
 })

@@ -8,6 +8,9 @@ import 'element-ui/lib/theme-chalk/index.css'
 import ElSearchTablePagination from 'el-search-table-pagination'
 import http from '@http'
 import '@styles/index.scss'
+import { Table } from 'iview'
+import 'iview/dist/styles/iview.css'
+Vue.component('i-table', Table)
 Vue.use(ElementUI, { size: 'medium', zIndex: 3000 })
 Vue.use(ElSearchTablePagination, {
   http

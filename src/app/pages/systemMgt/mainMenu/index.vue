@@ -1,24 +1,14 @@
 <template>
   <div>
-    <!-- <el-dialog :append-to-body='true' :visible.sync="show" width='50%'>
-        <menu-info></menu-info>
-      <div slot="footer" class="dialog-footer">
-        <el-button @click="show = false">取 消</el-button>
-        <el-button type="primary" @click="show = false">确 定</el-button>
-      </div>
-    </el-dialog> -->
     <add-mune v-if="addMuneParam.show" :param='addMuneParam'></add-mune>
     <el-row :gutter="20">
-
       <el-col style='border-right:1px solid #eee' :span="8">
         <tree-func :pageTree='allMune' :btnClick='btnClick' @funClick='funClick' @check='check' @ @get-info='getMuneInfo'  style=";border-bottom:1px solid #eee;padding-bottom:20px;margin-bottom:20px">
         </tree-func>
-
         <tree-func :pageTree='muneList' :isCheck='false'  @get-info='getMuneInfo' ></tree-func>
          <p>{{test.label}}{{test.id}}</p>
       </el-col>
       <el-col :span="16"><div><menuInfo/></div></el-col>
-
     </el-row>
 
   </div>

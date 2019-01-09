@@ -2,7 +2,7 @@
  * @Author: skye
  * @Date: 2019-01-04 09:34:40
  * @LastEditors: skye
- * @LastEditTime: 2019-01-07 16:34:00
+ * @LastEditTime: 2019-01-09 16:20:35
  * @Description: 树
  -->
 <template>
@@ -12,9 +12,6 @@
       </div>
       <el-tree ref="tree" :data="pageTree" @node-click="menuClick" @check='check' :filter-node-method="filterNode" node-key="id" :show-checkbox='isCheck' default-expand-all :props="defaultProps" :expand-on-click-node="false" :highlight-current="true">
 
-          <!-- <span class="custom-tree-node" slot-scope="{ node, data }">
-              <span>{{ node.label }}<el-tag v-if="data.type">功能</el-tag></span>
-          </span> -->
       </el-tree>
   </div>
 </template>

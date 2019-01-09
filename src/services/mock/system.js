@@ -47,7 +47,7 @@ Mock.mock(`${prefix}/getMenu`, 'get', () => {
         meta: { title: '系统示例2', icon: 'fa-th-large' },
         children: [
           {
-            path: '/systemDemo/table2',
+            path: '/2',
             component: '@page/systemDemo/table2',
             meta: { title: '表格示例2' },
             children: [

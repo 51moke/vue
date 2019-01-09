@@ -2,7 +2,7 @@
  * @Author: yanglin
  * @Date: 2019-01-09 09:39:11
  * @LastEditors: yanglin
- * @LastEditTime: 2019-01-09 11:52:41
+ * @LastEditTime: 2019-01-09 17:58:00
  * @Description:'图标库'
  -->
 <template>
@@ -23,7 +23,22 @@
       :visible.sync="dialogVisible"
       width="70%"
       :modal-append-to-body="false"
+      :fullscreen="isfullscreen"
     >
+      <el-button
+        class="fullIcon"
+        @click="isfullscreen=!isfullscreen"
+      >
+        <i
+          class="fa fa-window-restore"
+          v-if="isfullscreen"
+        ></i>
+        <i
+          class="fa fa-window-maximize"
+          v-else
+        ></i>
+      </el-button>
+
       <div>
         <div
           class="itemList"
@@ -67,7 +82,8 @@ export default {
       active: null,
       color1: 'blue',
       color2: null,
-      chooseIcon: null
+      chooseIcon: null,
+      isfullscreen: false
 
     }
   },
@@ -98,16 +114,38 @@ export default {
 
 <style lang="scss" >
 .icons {
-  .el-dialog__body .fa {
-    margin-right: 15px;
+  .el-dialog__body .itemList {
+    .fa {
+      margin-right: 15px;
+    }
+    .fa:hover,
+    .fa.active {
+      cursor: pointer;
+      color: #2b7fd6;
+    }
+    .fa:before {
+      margin-right: 10px;
+    }
   }
-  .el-dialog__body .fa:before {
-    margin-right: 10px;
-  }
-  .fa:hover,
-  .fa.active {
-    cursor: pointer;
-    color: #2b7fd6;
+  .fullIcon {
+    &.el-button:focus,
+    .el-button:hover {
+      background: none;
+    }
+    &.el-button {
+      position: absolute;
+      right: 40px;
+      top: 30px;
+      width: auto;
+      padding: 0;
+      border: none;
+      .fa{
+        color:#909399
+      }
+      .fa:hover{
+        color: #409EFF;
+      }
+    }
   }
 }
 </style>

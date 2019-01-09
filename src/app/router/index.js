@@ -34,10 +34,26 @@ let routerFiles = {
   '@page/systemDemo': {
     name: 'systemDemo',
     component: () => import('@pages/systemDemo')
+    // children: [
+    //   {
+    //     // UserProfile will be rendered inside User's <router-view>
+    //     // when /user/:id/profile is matched
+    //     path: '/table',
+    //     component: () => import('@pages/systemDemo/table')
+
+    //   }
+    //   // {
+    //   //   // UserPosts will be rendered inside User's <router-view>
+    //   //   // when /user/:id/posts is matched
+    //   //   path: 'posts',
+    //   //   component: UserPosts
+    //   // }
+    // ]
   },
   '@page/systemDemo/table': {
     name: 'table',
     component: () => import('@pages/systemDemo/table')
+
   },
   '@page/systemMgt': {
     name: 'systemMgt',
