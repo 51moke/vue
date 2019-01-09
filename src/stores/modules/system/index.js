@@ -1,13 +1,25 @@
+/*
+ * @Author: yanglin
+ * @Date: 2019-01-07 15:17:42
+ * @LastEditors: yanglin
+ * @LastEditTime: 2019-01-09 15:32:09
+ * @Description:'store-system'
+ */
 import { api } from 'apibus'
 
 export const namespaced = true
-
+/*
+ * @routerList: 路由列表
+ * @Breadcrumb: 面包屑
+ * @allMune: 菜单
+ * @FormData: form表单信息
+ * @fontIcon:文字图标列表
+ */
 export const state = {
 
   routerList: [],
   Breadcrumb: null,
   allMune: [],
-  num: [],
   FormData: {
     sortNum: '',
     name: '',
@@ -34,33 +46,29 @@ export const state = {
   fontIcon: [
     {
       title: '网页',
-      icons: ['address-book', 'address-book-o', 'address-card', 'address-card-o']
+      icons: ['address-book', 'address-book-o', 'address-card', 'address-card-o', 'address-book', 'address-book-o', 'address-card', 'address-card-o', 'address-book', 'address-book-o', 'address-card', 'address-card-o']
     },
     {
       title: '网页2',
-      icons: ['address-book', 'address-book-o', 'address-card', 'address-card-o']
+      icons: ['address-book', 'address-book-o', 'address-card', 'address-card-o', 'address-book', 'address-book-o', 'address-card', 'address-card-o', 'address-book', 'address-book-o', 'address-card', 'address-card-o']
     },
     {
       title: '网页3',
-      icons: ['address-book', 'address-book-o', 'address-card', 'address-card-o']
+      icons: ['address-book', 'address-book-o', 'address-card', 'address-card-o', 'address-book', 'address-book-o', 'address-card', 'address-card-o', 'address-book', 'address-book-o', 'address-card', 'address-card-o']
     },
     {
       title: '网页4',
-      icons: ['address-book', 'address-book-o', 'address-card', 'address-card-o']
+      icons: ['address-book', 'address-book-o', 'address-card', 'address-card-o', 'address-book', 'address-book-o', 'address-card', 'address-card-o', 'address-book', 'address-book-o', 'address-card', 'address-card-o']
     },
     {
       title: '网页5',
-      icons: ['address-book', 'address-book-o', 'address-card', 'address-card-o']
+      icons: ['address-book', 'address-book-o', 'address-card', 'address-card-o', 'address-book', 'address-book-o', 'address-card', 'address-card-o', 'address-book', 'address-book-o', 'address-card', 'address-card-o']
     }
 
   ]
 }
 export const getters = {
   allMune: state => state.allMune,
-  /* num (state) {
-    return state.num
-  } */
-  num: state => state.num,
   FormData: state => state.FormData,
   fontIcon: state => state.fontIcon
 }

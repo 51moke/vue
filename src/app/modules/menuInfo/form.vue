@@ -2,7 +2,7 @@
  * @Author: yanglin
  * @Date: 2019-01-08 15:02:47
  * @LastEditors: yanglin
- * @LastEditTime: 2019-01-08 18:03:25
+ * @LastEditTime: 2019-01-09 09:42:25
  * @Description:'form表单'
  -->
 
@@ -48,35 +48,7 @@
           </el-radio-group>
         </el-form-item>
         <el-form-item label="菜单图标">
-          <el-button
-          @click="dialogVisible = true"
-              icon="fa fa-book"
-            ></el-button><i class="fa fa-book"></i>
-<el-dialog
-      title="选择图标"
-      :visible.sync="dialogVisible"
-      width="30%"
-      :modal-append-to-body="false"
-    >
-      <div>
-        <div class="itemList" v-for="(itemList,index) in fontIcon" :key="index">
-          <div class="icontitle">{{itemList.title}}</div>
-          <div class="iconList">
-            <i v-for="(icon,i) in itemList.icons" :key="i" class="fa" :class="`fa-${icon}`">{{icon}}</i>
-          </div>
-        </div>
-      </div>
-      <span
-        slot="footer"
-        class="dialog-footer"
-      >
-        <el-button @click="dialogVisible = false">取 消</el-button>
-        <el-button
-          type="primary"
-          @click="dialogVisible = false"
-        >确 定</el-button>
-      </span>
-    </el-dialog>
+          <Icons/>
         </el-form-item>
 
         <el-form-item label="备注">
@@ -130,14 +102,13 @@
 </template>
 <script>
 import { mapGetters } from 'vuex'
+import Icons from './icons'
 export default {
-  data () {
-    return {
-      dialogVisible: false
-    }
+  components: {
+    Icons
   },
   computed: {
-    ...mapGetters({ FormData: 'system/FormData', fontIcon: 'system/fontIcon' })
+    ...mapGetters({ FormData: 'system/FormData' })
   }
 
 }
