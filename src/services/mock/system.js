@@ -1,25 +1,29 @@
 
 import Mock from 'mockjs'
 import prefix from '../api/proxy'
-Mock.mock(`${prefix}/getMenu`, 'get', () => {
+Mock.mock(`${prefix}/getMenuList`, 'get', () => {
   return {
     code: 0,
-    payload: [
+    result: [
       {
         path: '/dashBoard',
         component: '@ui/dashBoard',
         children: [],
-        meta: { title: '用户工作台', icon: 'fa-desktop' }
+        meta: { title: '用户工作台', icon: 'fa-desktop' },
+        menuId: '100101'
       },
       {
         path: '/systemMgt',
         component: '@page/systemMgt',
         meta: { title: '系统管理', icon: 'fa-book' },
+        menuId: '100201',
         children: [
           {
             path: '/systemMgt/mainMenu',
             component: '@page/systemMgt/mainMenu',
             meta: { title: '主菜单配置' },
+            menuId: '10020101',
+            parentId: '100201',
             children: []
 
           }
@@ -29,12 +33,16 @@ Mock.mock(`${prefix}/getMenu`, 'get', () => {
       {
         path: '/systemDemo',
         component: '@page/systemDemo',
+        redirect: '/systemDemo/index',
         meta: { title: '系统示例', icon: 'fa-th-large' },
+        menuId: '100301',
         children: [
           {
             path: '/systemDemo/table',
             component: '@page/systemDemo/table',
             meta: { title: '表格示例' },
+            menuId: '10030101',
+            parentId: '100301',
             children: [
             ]
           }
@@ -45,17 +53,23 @@ Mock.mock(`${prefix}/getMenu`, 'get', () => {
         path: '/systemDemo2',
         component: '@page/systemDemo2',
         meta: { title: '系统示例2', icon: 'fa-th-large' },
+        menuId: '100401',
         children: [
           {
             path: '/2',
             component: '@page/systemDemo/table2',
             meta: { title: '表格示例2' },
+            menuId: '10040101',
+            parentId: '100401',
             children: [
               {
                 path: '/a2/b2/c1',
                 component: '@app/news/cn',
+                menuId: '1004010101',
+                parentId: '10040101',
                 children: [],
                 meta: { title: '三级页面' }
+
               }
             ]
           },
@@ -67,6 +81,8 @@ Mock.mock(`${prefix}/getMenu`, 'get', () => {
               {
                 path: '/a2/b2/c11',
                 component: '@app/news/cn2',
+                menuId: '1004010102',
+                parentId: '10040101',
                 children: [],
                 meta: { title: '三级页面' }
               }

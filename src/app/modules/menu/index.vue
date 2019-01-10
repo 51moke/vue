@@ -63,7 +63,7 @@ export default {
       return this.$store.state.layout.isCollapse
     },
     navList () {
-      // console.log(JSON.parse(JSON.stringify(this.$store.state.system.routerList)), '////////////')
+      console.log(this.$store.state.system.routerList, '////////////')
       return (this.$store.state.system.routerList[0] && this.$store.state.system.routerList[0].children) || []
     }
   }

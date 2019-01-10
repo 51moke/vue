@@ -12,7 +12,7 @@ api.system.getLayout()
   .then(res => {
     // console.log('获取路由结果', JSON.parse(JSON.stringify(res)))
     // console.log('获取路由结果2', res)
-    let routerData = res.payload
+    let routerData = res.result
     Promise.all([import('@/app/router'), import('@/main')])
       .then(([appRouter, main]) => {
         // console.log('文件结果', appRouter, main)

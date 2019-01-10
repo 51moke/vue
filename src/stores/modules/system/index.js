@@ -2,7 +2,7 @@
  * @Author: yanglin
  * @Date: 2019-01-07 15:17:42
  * @LastEditors: yanglin
- * @LastEditTime: 2019-01-09 15:32:09
+ * @LastEditTime: 2019-01-10 16:36:54
  * @Description:'store-system'
  */
 import { api } from 'apibus'
@@ -70,7 +70,8 @@ export const state = {
 export const getters = {
   allMune: state => state.allMune,
   FormData: state => state.FormData,
-  fontIcon: state => state.fontIcon
+  fontIcon: state => state.fontIcon,
+  routerList: state => state.routerList
 }
 export const mutations = {
   getRouter (state, data) {
@@ -95,8 +96,8 @@ export const actions = {
     return api.system.getRouters()
       .then(res => {
         console.log('接口结果', res)
-        context.commit('getRouter', res.payload)
-        return res.payload
+        context.commit('getRouter', res.result)
+        return res.result
       })
   },
   getBreadcrumb (context, data) {

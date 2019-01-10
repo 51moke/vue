@@ -10,19 +10,22 @@ import prefix from './proxy'
 export default class routes {
   // 获取路由
   getRouters () {
-    return http.get(`${prefix}/getMenu`).then(res => {
-      res.payload = [{
+    return http.get(`${prefix}/getMenuList`).then(res => {
+      console.log(res, '///////////////路由')
+      res.result = [{
         path: '/',
         component: '@app/index',
-        redirect: 'dashboard',
+        // redirect: 'dashboard',
+        menuId: '1001',
         meta: { title: '首页' },
-        children: [...res.payload]
+        children: [...res.result]
 
       },
       {
         path: '/login',
         component: '@app/login',
-        children: []
+        children: [],
+        menuId: '1002'
 
       }
 
