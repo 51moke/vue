@@ -133,3 +133,57 @@ Mock.mock(`${prefix}/getAllMenu`, 'get', () => {
     ]
   }
 })
+// 获取菜单mock
+Mock.mock(`${prefix}/getMenu`, 'get', () => {
+  let res = {
+    'code': 0,
+    'message': '获取菜单成功',
+    'result': {
+      menuId: '',
+      parentMenuId: '',
+      menuName: '',
+      sortno: '',
+      requestUrl: '',
+      requestParams: '',
+      munuIcon: '',
+      menuState: '',
+      createOrg: '',
+      createUser: '',
+      createDate: '',
+      updateOrg: '',
+      updateUser: '',
+      updateDate: '',
+      menuRemark: '',
+      menuComponents: ''
+    }
+  }
+
+  return res
+})
+// 创建菜单mock
+Mock.mock(`${prefix}/createMenu`, 'post', () => {
+  let res = {
+    'code': 0,
+    'message': '创建菜单成功'
+  }
+
+  return res
+})
+// 删除菜单mock
+Mock.mock(`${prefix}/deleteMenu`, 'delete', () => {
+  let res = {
+    'code': 0,
+    'message': '删除菜单成功'
+  }
+
+  return res
+})
+// 更新菜单mock
+Mock.mock(`${prefix}/updateMenu`, 'put', () => {
+  let res = {
+    'code': 0,
+    'message': '更新菜单成功'
+  }
+
+  return res
+})
