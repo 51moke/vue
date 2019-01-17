@@ -1,13 +1,13 @@
 import { Register } from 'apibus'
-import axios from 'axios'
+import http from '@http'
 
 @Register('demo')
 export default class demo {
   getList () {
-    return axios.post('/demo')
+    return http.post('/demo')
       .then(res => {
-        // console.log('mock数据', res.data)
-        return res.data
+        // console.log('mock数据', res)
+        return res
       })
     // let data = {
     //   code: 0,

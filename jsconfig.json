@@ -11,7 +11,8 @@
       "@pages/*": ["./src/app/pages/*"],
       "@ui/*": ["./src/app/ui/*"],
       "@/*":["./src/*"],
-      "@layout/*":["./src/app/layout/*"]
+      "@layout/*":["./src/app/layout/*"],
+      "@http/*":["./src/services/net/http/*"]
     }
   }
 }
