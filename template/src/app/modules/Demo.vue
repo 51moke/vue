@@ -18,7 +18,6 @@ import DemoList from '@components/DemoList'
 import DemoInfo from '@components/DemoInfo'
 
 export default {
-  // template: `<div>标题：{{ item&&item.title }}</div>`,
   components: {
     DemoList,
     DemoInfo
