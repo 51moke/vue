@@ -19,7 +19,7 @@
           <i v-if="!scope.row._expanded" class="el-icon-plus"/>
           <i v-else class="el-icon-minus"/>
         </span>
-        <span>{{ scope.row[column.value] }}</span>
+        {{ scope['row'][column.value] }}
       </template>
     </el-table-column>
     <slot/>
