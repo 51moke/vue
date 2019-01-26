@@ -14,12 +14,13 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "apibus": "^1.0.8",
+    "apibus": "^1.0.9",
     "axios": "^0.18.0",
     "el-search-table-pagination": "^0.4.28",
     "element-ui": "2.4.6",
-    "hook-promise": "^1.0.0",
-    "log4web": "^1.0.0",
+    "hook-promise": "^1.0.1",
+    "iview": "^3.2.2",
+    "log4web": "^1.0.1",
     "node-sass": "^4.7.2",
     "sass-loader": "7.0.3",
     "vue": "^2.5.2",
